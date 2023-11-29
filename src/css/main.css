@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+@import url("/fonts/neucha/neucha.css");
 html {
   font-size: 16px;
 }
@@ -21,65 +21,80 @@ body {
   }
 }
 .fade-in {
+  animation: fadeInAnimation 1s ease-in-out;
+}
+
+.fade-in-3-seconds {
   animation: fadeInAnimation 3s ease-in-out;
 }
 
-.invitation-container {
+.hidden {
+  display: none !important;
+}
+
+.back > img {
+  cursor: pointer;
+}
+
+.container {
   width: 100vw;
   height: 100vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.invitation {
   display: flex;
   flex-direction: column;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-transform: uppercase;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
 }
-.invitation-container h1 {
+.invitation h1 {
   font-family: "Neucha", cursive;
   text-transform: none;
 }
-.invitation-container .message {
+.invitation .message {
   width: 80vw;
   margin-bottom: 7vh;
   font-size: 0.9rem;
   letter-spacing: 0.1rem;
 }
-.invitation-container .date {
+.invitation .date {
   display: grid;
   grid-template-areas: ". month ." "day date time" ". year .";
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.invitation-container .date > div {
+.invitation .date > div {
   font-size: 0.8rem;
   text-align: center;
   letter-spacing: 0.3rem;
 }
-.invitation-container .date .month {
+.invitation .date .month {
   grid-area: month;
 }
-.invitation-container .date .day {
+.invitation .date .day {
   grid-area: day;
 }
-.invitation-container .date .dateValue {
+.invitation .date .dateValue {
   grid-area: date;
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   font-size: 3rem;
 }
-.invitation-container .date .time {
+.invitation .date .time {
   grid-area: time;
   letter-spacing: 0.2;
 }
-.invitation-container .date .year {
+.invitation .date .year {
   grid-area: year;
   letter-spacing: 0.2;
 }
-.invitation-container .venue {
+.invitation .venue {
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -88,46 +103,64 @@ body {
   font-size: 0.9rem;
   letter-spacing: 0.2rem;
 }
-.invitation-container .links {
+.invitation .links {
   display: flex;
   gap: 2vw;
   padding-top: 15vh;
   justify-content: center;
   align-items: center;
 }
-.invitation-container .links > a {
+.invitation .links > a {
   font-size: 0.7rem;
   color: #fff;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
-.invitation-container .links > a:not(:last-child) {
+.invitation .links > a:not(:last-child) {
   padding-right: 0.7rem;
 }
 @media (min-width: 376px) {
-  .invitation-container .date > div {
+  .invitation .date > div {
     font-size: 1.1rem;
   }
 }
 @media (min-width: 576px) {
-  .invitation-container .date > div {
+  .invitation .date > div {
     font-size: 1.5rem;
   }
-  .invitation-container .message, .invitation-container .venue {
+  .invitation .message, .invitation .venue {
     letter-spacing: 0.2rem;
     font-size: 1rem;
   }
-  .invitation-container h1 {
+  .invitation h1 {
     font-size: 3rem;
   }
 }
 @media (min-width: 768px) {
-  .invitation-container .date > div {
+  .invitation .date > div {
     font-size: 2rem;
   }
-  .invitation-container .message, .invitation-container .venue {
+  .invitation .message, .invitation .venue {
     font-size: 1.2rem;
   }
+}
+
+.entourage {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.attire {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

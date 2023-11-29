@@ -23,19 +23,46 @@ const typewrite = (elem, interval, callback = undefined) => {
     }, interval);
 };
 
+const toggleContainer = (selector) => {
+    const others = document.querySelectorAll('.container');
+    const targetContainer = document.querySelector('.container' + selector);
+
+    others.forEach(other => { 
+        other.classList.remove('fade-in*', 'hidden');
+        other.classList.add('hidden');
+    });
+    
+    targetContainer.classList.remove('hidden');
+    targetContainer.classList.add('fade-in');
+};
+
 (async () => {
 
-    const event = document.querySelector('.event');
-    const others = document.querySelectorAll('.message, .date, .venue, .links');
-
-    others.forEach(o => o.style.opacity = 0);
-
-    typewrite(event, 400, () => {
-        others.forEach(o => {
-            o.style.opacity = 1;
-            o.classList.add('fade-in');        
+    (function shared() {
+        // Back to main screen (invitation page)
+        document.querySelectorAll('.back > img').forEach(back => {
+            back.onclick = () => toggleContainer('.invitation');
         });
-    });
+    })();
 
+    (function invitationPage() {
+        const event = document.querySelector('.event');
+        const others = document.querySelectorAll('.message, .date, .venue, .links');
+        
+        others.forEach(o => o.style.opacity = 0);
+        
+        // Typewrite effect for event name
+        typewrite(event, 4, () => {
+            others.forEach(o => {
+                o.style.opacity = 1;
+                o.classList.add('fade-in');        
+            });
+        });
+
+        // Toggle container via button links
+        document.querySelectorAll('.links > a').forEach(link => {
+            link.onclick = () => toggleContainer(link.attributes.href.value.replace('#', ''))
+        });
+    })();
 
 })();
