@@ -52,7 +52,7 @@ const toggleContainer = (selector) => {
         others.forEach(o => o.style.opacity = 0);
         
         // Typewrite effect for event name
-        typewrite(event, 4, () => {
+        typewrite(event, 3, () => {
             others.forEach(o => {
                 o.style.opacity = 1;
                 o.classList.add('fade-in');        

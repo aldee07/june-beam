@@ -1,5 +1,10 @@
 @import url('/fonts/neucha/neucha.css');
 
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 html {
     font-size: 16px;
 }
@@ -11,26 +16,22 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-}
 
-@keyframes fadeInAnimation {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    h1 {
+        font-family: 'Neucha', cursive;
+        text-transform: none;
+    }
 }
 
 .fade-in {
     animation: fadeInAnimation 1s ease-in-out;
 }
 
-.fade-in-3-seconds {
-    animation: fadeInAnimation 3s ease-in-out;
-}
-
 .hidden {
     display: none !important;
 }
 
-.back > img {
+.back {
     cursor: pointer;
 }
 
@@ -49,11 +50,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    h1 {
-        font-family: 'Neucha', cursive;
-        text-transform: none;
-    }
 
     .message {
         width: 80vw;
@@ -170,9 +166,47 @@ body {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+
+    .roles {
+        width: 100%;
+        max-height: 68vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        table { 
+            width: 90%; 
+            margin: auto;
+        }
+
+        th, td {
+            width: 50%;
+            font-size: 0.7em;
+        }
+
+        th { 
+            padding-bottom: 1rem;
+            letter-spacing: 0.2rem; 
+        }
+
+        table:not(:first-child) th { padding-top: 2rem; }
+
+        td { text-transform: none; }
+
+        @media (min-width: 376px) {
+            th, td { font-size: 0.9rem; }
+        }
+
+        @media (min-width: 576px) {
+            th, td { font-size: 1rem; }
+        }
+
+        @media (min-width: 768px) {
+            th, td { font-size: 1.1rem; }
+        }
+    }
 }
 
 .attire {

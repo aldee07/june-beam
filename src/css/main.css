@@ -1,4 +1,12 @@
 @import url("/fonts/neucha/neucha.css");
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 html {
   font-size: 16px;
 }
@@ -11,28 +19,20 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+body h1 {
+  font-family: "Neucha", cursive;
+  text-transform: none;
 }
+
 .fade-in {
   animation: fadeInAnimation 1s ease-in-out;
-}
-
-.fade-in-3-seconds {
-  animation: fadeInAnimation 3s ease-in-out;
 }
 
 .hidden {
   display: none !important;
 }
 
-.back > img {
+.back {
   cursor: pointer;
 }
 
@@ -51,10 +51,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-.invitation h1 {
-  font-family: "Neucha", cursive;
-  text-transform: none;
 }
 .invitation .message {
   width: 80vw;
@@ -149,9 +145,48 @@ body {
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
+}
+.entourage .roles {
+  width: 100%;
+  max-height: 68vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.entourage .roles table {
+  width: 90%;
+  margin: auto;
+}
+.entourage .roles th, .entourage .roles td {
+  width: 50%;
+  font-size: 0.7em;
+}
+.entourage .roles th {
+  padding-bottom: 1rem;
+  letter-spacing: 0.2rem;
+}
+.entourage .roles table:not(:first-child) th {
+  padding-top: 2rem;
+}
+.entourage .roles td {
+  text-transform: none;
+}
+@media (min-width: 376px) {
+  .entourage .roles th, .entourage .roles td {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 576px) {
+  .entourage .roles th, .entourage .roles td {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .entourage .roles th, .entourage .roles td {
+    font-size: 1.1rem;
+  }
 }
 
 .attire {
