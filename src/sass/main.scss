@@ -172,9 +172,13 @@ body {
 
     .roles {
         width: 100%;
-        max-height: 68vh;
-        overflow-y: scroll;
+        max-height: 75vh;
+        overflow-y: auto;
         overflow-x: hidden;
+
+        -ms-overflow-style: none; // IE / Edge
+        scrollbar-width: none;    // Moz Firefox
+        &::-webkit-scrollbar { display: none; } // Chrome / Safari
 
         table { 
             width: 90%; 
@@ -191,7 +195,7 @@ body {
             letter-spacing: 0.2rem; 
         }
 
-        table:not(:first-child) th { padding-top: 2rem; }
+        table:not(:first-child) th { padding-top: 3rem; }
 
         td { text-transform: none; }
 
@@ -206,6 +210,22 @@ body {
         @media (min-width: 768px) {
             th, td { font-size: 1.1rem; }
         }
+
+        @media (min-width: 920px) {
+            th, td { font-size: 1.3rem; }
+        }
+
+        @media (min-width: 1240px) {
+            table { width: 60%; }
+        }
+
+        @media (min-width: 1366px) {
+            table { width: 50%; }
+        }
+
+        @media (min-width: 1780px) {
+            table { width: 40%; }
+        }
     }
 }
 
@@ -213,7 +233,59 @@ body {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,0.4);
+        width: 90vw;
+        height: 75vh;
+
+        > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50%;
+            
+            .pic {
+                width: 40%;
+            }
+            
+            .text {
+                width: 50%;
+                padding: 0 20px;
+                border-left: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+
+    @media (min-width: 576px) {
+        .details { width: 70vw; }
+    }
+
+    @media (min-width: 768px) {
+        .details { width: 60vw; }
+    }
+
+    @media (min-width: 920px) {
+        .details { width: 50vw; }
+    }
+
+    @media (min-width: 1240px) {
+        .details { width: 40vw; }
+    }
+
+    @media (min-width: 1366px) {
+        .details { width: 30vw; }
+    }
+
+    @media (min-width: 1780px) {
+        table { width: 40%; }
+    }
 }
