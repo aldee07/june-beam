@@ -25,7 +25,7 @@ const typewrite = (elem, interval, callback = undefined) => {
 
 const toggleContainer = (selector) => {
     const others = document.querySelectorAll('.container');
-    const targetContainer = document.querySelector('.container' + selector);
+    const targetContainer = typeof selector == 'string' ? document.querySelector('.container' + selector) : selector;
 
     others.forEach(other => { 
         other.classList.remove('fade-in*', 'hidden');
@@ -34,15 +34,44 @@ const toggleContainer = (selector) => {
     
     targetContainer.classList.remove('hidden');
     targetContainer.classList.add('fade-in');
+
+    document.querySelector('.back').style.visibility = targetContainer.classList.contains('invitation') ? 'hidden' : 'visible';
+};
+
+const onSwipe = () => {
+
+
+    document.querySelectorAll('.container')
+        .forEach((element) => {
+            let startX;
+
+            element.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+
+            element.addEventListener('touchend', (e) => {
+                
+                const endX = e.changedTouches[0].clientX;
+                const directionX = endX > startX ? 'left' : 'right';
+                const deltaX = directionX == 'left' ? endX - startX : startX - endX;
+    
+                const minSwipeDistance = 150;
+
+                if (deltaX > minSwipeDistance) {
+                    const next = directionX == 'right' ? element.nextElementSibling : element.previousElementSibling;
+
+                    if (next) {
+                        return toggleContainer(next);
+                    }
+
+                    toggleContainer('.invitation');
+                }
+            })
+        });
 };
 
 (async () => {
 
     (function shared() {
-        // Back to main screen (invitation page)
-        document.querySelectorAll('.back > img').forEach(back => {
-            back.onclick = () => toggleContainer('.invitation');
-        });
+        document.querySelector('.back > img').onclick = () => toggleContainer('.invitation');
     })();
 
     (function invitationPage() {
@@ -64,5 +93,7 @@ const toggleContainer = (selector) => {
             link.onclick = () => toggleContainer(link.attributes.href.value.replace('#', ''))
         });
     })();
+
+    onSwipe();
 
 })();
