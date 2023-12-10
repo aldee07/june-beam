@@ -201,6 +201,12 @@ body {
         table:not(:first-child) th { padding-top: 3rem; }
 
         td { text-transform: none; }
+        td {
+            border-bottom: 1px solid rgba(102, 102, 102, 0.5);
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
 
         @media (min-width: 376px) {
             th, td { font-size: 0.9rem; }
@@ -332,6 +338,7 @@ body {
         justify-content: space-around;
         height: 25vh;
         margin-top: 40px;
+        text-align: center;
 
         input {
             width: 100%;
@@ -342,7 +349,7 @@ body {
             text-indent: 1rem;
         }
 
-        div:last-child {
+        div.buttons {
             width: 101%;
             display: flex;
             justify-content: space-between;
@@ -353,11 +360,18 @@ body {
                 color: #d0d0d0;
                 border: none;
                 font-weight: bolder;
+                cursor: pointer;
 
                 &.accept { background-color: rgba(4, 204, 4, 0.5); }
                 &.regret { background-color: rgba(204, 31, 4, 0.5); }
+
+                &.disabled {
+                    background-color: gray;
+                }
             }
         }
+
+        div.thanks { visibility: hidden; }
     }
 
     
