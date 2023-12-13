@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>June & Beam | Attendees</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-family: monospace;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+
+        thead tr {
+            background-color: #000;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #0de3ad;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Guest</th>
+                    <th>Response</th>
+                    <th>Seats</th>
+                    <th>Date Responded</th>
+                </tr>
+            </thead>
+            <tbody id="responses"></tbody>
+        </table>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        (async () => {
+
+            const data = await rsvp.get();
+            const responses = data.record.responses;
+            const html = [];
+            
+            for (const r of responses) {
+                html.push(`
+                    <tr>
+                        <td>${r.name}</td>
+                        <td>${r.response}</td>
+                        <td>${r.guests}</td>
+                        <td>${new Date(r.timestamp).toString().substr(0, 21)}</td>
+                    </tr>
+                `);
+            }
+
+            $('#responses').html(html);
+        })();
+    </script>
+</body>
+</html>

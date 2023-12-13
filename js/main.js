@@ -146,10 +146,3 @@ const onRespond = () => {
     });
 };
 
-(async () => {
-    invitationPage();
-    onSwipe();
-    onRespond();
-
-    $('.back > img').click(() => toggleContainer('.invitation'));
-})();
