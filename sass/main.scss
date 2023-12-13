@@ -186,6 +186,10 @@ body {
         table { 
             width: 90%; 
             margin: auto;
+
+            &:last-of-type {
+                margin-bottom: 100px;
+            }
         }
 
         th, td {
@@ -310,6 +314,48 @@ body {
     }
 }
 
+.gifts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: none;
+    background-color: rgba(0,0,0,0.8);
+    color: #d0d0d0;
+
+    h3 { 
+        font-family: 'Neucha', cursive;
+        text-transform: uppercase;
+        margin-top: 10vh;
+    }
+
+    .details {
+        width: 80vw;
+    }
+
+    .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        img {
+            position: absolute;
+            opacity: 0.1;
+            width: 50%;
+            right: -35px;
+            bottom: 30px;
+            transform: rotate(-30deg);
+
+            @media (min-width: 800px) {
+                width: 30%;
+                bottom: 0px;
+            }
+        }
+    }
+}
+
 .rsvp {
     display: flex;
     flex-direction: column;
@@ -375,9 +421,6 @@ body {
         div.thanks { visibility: hidden; }
     }
 
-    
-
-        
     @media (min-width: 376px) {
         .details, .form { width: 75vw; }
     }

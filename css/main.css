@@ -168,6 +168,9 @@ body h1 {
   width: 90%;
   margin: auto;
 }
+.entourage .roles table:last-of-type {
+  margin-bottom: 100px;
+}
 .entourage .roles th, .entourage .roles td {
   width: 50%;
   font-size: 0.7em;
@@ -296,6 +299,46 @@ body h1 {
 @media (min-width: 1780px) {
   .attire .preview img {
     width: 15%;
+  }
+}
+
+.gifts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #d0d0d0;
+}
+.gifts h3 {
+  font-family: "Neucha", cursive;
+  text-transform: uppercase;
+  margin-top: 10vh;
+}
+.gifts .details {
+  width: 80vw;
+}
+.gifts .bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.gifts .bg img {
+  position: absolute;
+  opacity: 0.1;
+  width: 50%;
+  right: -35px;
+  bottom: 30px;
+  transform: rotate(-30deg);
+}
+@media (min-width: 800px) {
+  .gifts .bg img {
+    width: 30%;
+    bottom: 0px;
   }
 }
 
