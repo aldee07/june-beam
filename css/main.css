@@ -320,6 +320,7 @@ body h1 {
 }
 .gifts .details {
   width: 80vw;
+  line-height: 1.7rem;
 }
 .gifts .bg {
   position: fixed;
