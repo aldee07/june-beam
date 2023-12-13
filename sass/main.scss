@@ -326,7 +326,9 @@ body {
     h3 { 
         font-family: 'Neucha', cursive;
         text-transform: uppercase;
-        margin-top: 10vh;
+        &:last-of-type {
+            margin-top: 10vh;
+        }
     }
 
     .details {

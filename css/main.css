@@ -314,6 +314,8 @@ body h1 {
 .gifts h3 {
   font-family: "Neucha", cursive;
   text-transform: uppercase;
+}
+.gifts h3:last-of-type {
   margin-top: 10vh;
 }
 .gifts .details {
