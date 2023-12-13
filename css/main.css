@@ -343,6 +343,41 @@ body h1 {
     bottom: 0px;
   }
 }
+@media (min-width: 376px) {
+  .gifts .details {
+    width: 75vw;
+  }
+}
+@media (min-width: 576px) {
+  .gifts .details {
+    width: 70vw;
+  }
+}
+@media (min-width: 768px) {
+  .gifts .details {
+    width: 60vw;
+  }
+}
+@media (min-width: 920px) {
+  .gifts .details {
+    width: 50vw;
+  }
+}
+@media (min-width: 1240px) {
+  .gifts .details {
+    width: 40vw;
+  }
+}
+@media (min-width: 1366px) {
+  .gifts .details {
+    width: 30vw;
+  }
+}
+@media (min-width: 1780px) {
+  .gifts .details {
+    width: 20vw;
+  }
+}
 
 .rsvp {
   display: flex;

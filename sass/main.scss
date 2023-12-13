@@ -356,6 +356,36 @@ body {
             }
         }
     }
+
+    
+
+    @media (min-width: 376px) {
+        .details { width: 75vw; }
+    }
+
+    @media (min-width: 576px) {
+        .details { width: 70vw; }
+    }
+
+    @media (min-width: 768px) {
+        .details { width: 60vw; }
+    }
+
+    @media (min-width: 920px) {
+        .details { width: 50vw; }
+    }
+
+    @media (min-width: 1240px) {
+        .details { width: 40vw; }
+    }
+
+    @media (min-width: 1366px) {
+        .details { width: 30vw; }
+    }
+
+    @media (min-width: 1780px) {
+        .details { width: 20vw; }
+    }
 }
 
 .rsvp {
