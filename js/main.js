@@ -40,7 +40,7 @@ const invitationPage = () => {
     others.css('opacity', 0);
     
     // Typewrite effect for event name
-    typewrite($('.event'), 3, () => {
+    typewrite($('.event'), 330, () => {
         others.css('opacity', 1).addClass('fade-in');
     });
 
